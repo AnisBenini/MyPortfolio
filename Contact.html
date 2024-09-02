@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" class="logo" href="assets/logo1.png " type="image/x-icon"/> 
+</head>
+
+<body class="cont">
+    <nav class="nav">
+        <div class="logo1">
+            <a href="index.html">BENINI.</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="file/cv.pdf" download>Resume</a>
+           
+            <a href="aboutMe.html">About Me</a>
+        </div>
+        <div class="pro">
+            <a href="Myprojects.html"><button><i class="ri-github-fill"></i> My Projects</button></a>
+        </div>
+    </nav>
+    <section class="contacts" id="contacts">
+        <h2 class="heading">Let's Get 
+                             In Touch </h2>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="760f23c8-70a8-497b-a0fa-876ed7c40387">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Full Name / Company Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                
+                <input type="number" id="phone" name="phone" placeholder="Phone Number" required>
+                
+                <input type="text" name="subject" placeholder="Subject" required>
+            </div>
+            
+            <div class="input-group-2">
+                <textarea name="message" id="" cols="30" rows="8" maxlength="430" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message  " class="btn">
+            </div>
+        </form>
+    </section>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
