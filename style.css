@@ -717,14 +717,20 @@ nav button i{
     background-image: url(assets/login.avif);
     background-repeat: no-repeat;
     background-size:cover;    
-    min-height: 95vh;
+    min-height: 100vh;                  /* hauteur minimale = 100% de la fenêtre */
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
+nav {
+    background-color: #5d585800;
+}
 nav .logo1 a{
-    color: #fff;
+    color: #ffffff;
     font-weight: 600;
-
+}
+nav .logo1 a:hover{
+    color: #606060;
 }
 
 .cont .nav-links a:hover{
@@ -733,7 +739,7 @@ nav .logo1 a{
 
 .contacts h2{
     
-   
+
     color: WHITE;
     text-align: center;
     font-weight: bold;
@@ -1124,7 +1130,7 @@ footer a:hover{
         box-sizing: border-box;
         gap: 10px;
     }
-
+    
     /* Hide main CTA button on small screens */
     nav > a{
         display: none;
@@ -1173,41 +1179,57 @@ footer a:hover{
     .logo{
         margin-top: -4px;
     }
-
+    
     /* Masquer uniquement l'icône du bouton My Projects, pas le hamburger */
     nav > a button i{
         display: none;
     }   
    
     .contacts form {
-        flex-direction:column;
-        width: 80%;
-        transform: translateX(-55%);
-        
-    }
-   
-    .cont .contacts h2{
-        font-size: 25px;
-        
-    }
-    .cont .contacts form .input-box input{
-        width: auto;
-        
-    }
-    .cont .contacts form .input-box,.cont .contacts form .input-group-2 {
-        flex-direction: column;
         display: flex;
-        justify-content: center;
-        width:auto;
-        margin:0 10px;
-     }
+        flex-direction: column; /* champs empilés verticalement */
+        width: 90%;             /* occupe 90% de l'écran */
+        max-width: 500px;       /* limite la largeur sur grands écrans */
+        margin: 0 auto;         /* centre le formulaire */
+        gap: 15px;              /* espace entre les champs */
+        transform: none;        /* supprime le translateX problématique */
+    }
+
+    /* Titre */
+    .cont .contacts h2 {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Groupes de champs */
+    .cont .contacts form .input-box,
+    .cont .contacts form .input-group-2 {
+        display: flex;
+        flex-direction: column; /* champs empilés sur mobile */
+        width: 100%;
+        margin: 0;              /* supprime marges fixes */
+        gap: 10px;
+    }
+
+    /* Champs input */
+    .cont .contacts form .input-box input,
     .cont .contacts form .input-group-2 input {
-       
-        font-size: 12px;
-        width:50%;
-        margin-left: 60px;
-        margin-top: -10px;
-     }
+        width: 100%;             /* champs remplissent la largeur du parent */
+        font-size: 14px;         /* lisible sur mobile */
+        padding: 10px 12px;
+        border-radius: 15px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Optionnel : ajustement du deuxième groupe de champs */
+    .cont .contacts form .input-group-2 input {
+        margin-left: 0;          /* supprime margin-left fixe */
+        margin-top: 0;
+    }
+    
+
    
     .hero{
         padding: 90px 20px 40px 20px;
@@ -1236,6 +1258,7 @@ footer a:hover{
 
     .projects .inner{
         padding: 50px 40px;
+        overflow: hidden;
     }
 
     .projects .inner > h2{
@@ -1252,7 +1275,7 @@ footer a:hover{
 
     .projects .inner .items .item{
         width: 100%;
-        height: 170px;
+        height: auto;
     }
 
     .projects .inner .items .item i{
@@ -1301,6 +1324,9 @@ footer a:hover{
     footer p{
         font-size: 11px;
     }
+
+
+    
 
 }
 
@@ -1454,6 +1480,9 @@ footer a:hover{
 .skill-item:hover .devicon-docker-plain { color: #2496ED; }
 .skill-item:hover .devicon-linux-plain { color: #000000; }
 .skill-item:hover .devicon-amazonwebservices-plain { color: #FF9900; }
+.skill-item:hover .devicon-photoshop-plain { color: #001e36; }
+.skill-item:hover .devicon-illustrator-plain { color: #ff9a00; }
+.skill-item:hover .devicon-blender-original { color: #ff6a00; }
 
 /* Hover texte */
 .skill-item:hover span {
@@ -1488,4 +1517,29 @@ footer a:hover{
     .skills-grid { gap: 30px; }
     .skill-item i,
     .skill-item img { font-size: 60px; width: 60px; height: 60px; }
+}
+
+.skill-item.bonus {
+    background: none;          /* pas de fond */
+    color: #333;               /* couleur du texte */
+    font-size: 30rem;           /* taille des points */
+    font-weight: 1000;          /* un peu gras */
+    text-align: center;
+    padding: 0;                /* pas de padding */
+    border: none;              /* pas de bordure */
+    box-shadow: none;          /* pas d'ombre */
+    cursor: default;           /* pas de hover spécial */
+}
+
+/* Texte responsive */
+.skill-item.bonus span {
+    display: block;
+    line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skill-item.bonus span {
+        font-size: 3rem;
+    }
 }

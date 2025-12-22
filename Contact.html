@@ -5,46 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" class="logo" href="assets/logo1.png " type="image/x-icon"/> 
+    <link rel="icon" class="logo" href="assets/logo.png" type="image/x-icon"/> 
+
+    <!-- AOS Library CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
 </head>
 
 <body class="cont">
-    <nav class="nav">
-        <div class="logo1">
+    <nav class="nav" data-aos="fade-down" data-aos-duration="1000">
+        <div class="logo1" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
             <a href="index.html">BENINI.</a>
         </div>
-
-        <div class="nav-links">
-            <a href="file/PERFECT.pdf" download>Resume</a>
-           
-            <a href="aboutMe.html">About Me</a>
-        </div>
-        <div class="pro">
-            <a href="Myprojects.html"><button><i class="ri-github-fill"></i> My Projects</button></a>
-        </div>
     </nav>
+    
     <section class="contacts" id="contacts">
-        <h2 class="heading">Let's Get 
-                             In Touch </h2>
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <h2 class="heading" data-aos="fade-up" data-aos-duration="1000">Let's Get In Touch</h2>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
             <input type="hidden" name="access_key" value="6e40fd06-12ac-44cb-a5ab-0d16cf968dc6">
-            <div class="input-box">
+
+            <div class="input-box" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
                 <input type="text" name="name" placeholder="Full Name / Company Name" required>
                 <input type="email" name="email" placeholder="Email" required>
-                
                 <input type="number" id="phone" name="phone" placeholder="Phone Number" required>
-                
                 <input type="text" name="subject" placeholder="Subject" required>
             </div>
             
-            <div class="input-group-2">
-                <textarea name="message" id="" cols="30" rows="8" maxlength="430" placeholder="Your Message" required></textarea>
-                <input type="submit" value="Send Message  " class="btn">
+            <div class="input-group-2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
+                <textarea name="message" cols="30" rows="8" maxlength="430" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message" class="btn">
             </div>
         </form>
     </section>
 
-    
+    <!-- AOS Library JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // l'animation se fait une seule fois
+        });
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
