@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 html{
-    scroll-behavior: smooth
+    font-size: 85%;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+    
 }
 *::before,
 *::after {
@@ -23,6 +34,8 @@ button{
 
 img{
     object-fit: cover;
+    max-width: 100%;
+    height: auto;
 }
 
 h2{
@@ -41,6 +54,10 @@ nav{
     transform: translateX(-50%);
     border-radius: 16px;
     padding: 12px;
+    max-width: calc(100% - 32px);
+    box-sizing: border-box;
+    background: #fff;
+    z-index: 1000;
 }
 
 nav .logo{
@@ -102,10 +119,22 @@ nav button i{
     font-size: 20px;
 }
 
+/* Mobile menu button (hamburger) */
+.mobile-menu-toggle{
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
 .hero{
-    
     margin-top: 80px;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     padding: 0 60px;
     display: flex;
     align-items: center;
@@ -223,8 +252,9 @@ nav button i{
     justify-content: center;
     flex-direction: column;
     background: #f5f5f5;
-    padding: 120px 50px 80px 50px;
-    
+    padding: 90px 50px 80px 50px;
+    /* pour que le scroll vers #about laisse un espace sous la navbar */
+    scroll-margin-top: 110px;
 }
 
 .about > p{
@@ -240,7 +270,8 @@ nav button i{
 .about > h2{
     font-size: 22px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    margin-top: 25px;
 }
 
 .about .items{
@@ -1001,7 +1032,8 @@ footer a:hover{
         margin-top: 100px;
         flex-direction: column;
         justify-content: center;
-        height: calc(100vh - 100px);
+        height: auto;
+        min-height: calc(100vh - 100px);
     }
     .contacts form .input-box{
         flex-direction: column;
@@ -1077,34 +1109,74 @@ footer a:hover{
 
         flex-direction: column;
         align-items: flex-start;
-       
+        
     }
    
 
     nav{
         margin-bottom: 10px;
-    }
-    nav  button{
-       width: 95px;
-    }
-    .top h2{
-        margin-top: 50px;
-    }
-    nav,
-    nav .nav-links , nav .pro{
+        padding: 10px 16px;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 32px);
+        box-sizing: border-box;
         gap: 10px;
     }
-    nav .nav-links a{
-        margin-top: 5px;
-        font-size: small;
-    }
-    .logo{
-        margin-top: -10px;
-       
-    }
-    nav button i{
+
+    /* Hide main CTA button on small screens */
+    nav > a{
         display: none;
-        
+    }
+
+    /* Show hamburger button */
+    .mobile-menu-toggle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-menu-toggle i{
+        display: block;
+        font-size: 24px;
+    }
+
+    nav .nav-links{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 8px;
+        border-radius: 12px;
+        border: 1px solid #e8e8e8;
+        padding: 8px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        display: none;
+    }
+
+    nav .nav-links.active{
+        display: flex;
+    }
+
+    nav .nav-links a{
+        margin-top: 0;
+        font-size: 14px;
+        padding: 10px 18px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .logo{
+        margin-top: -4px;
+    }
+
+    /* Masquer uniquement l'icône du bouton My Projects, pas le hamburger */
+    nav > a button i{
+        display: none;
     }   
    
     .contacts form {
@@ -1138,11 +1210,15 @@ footer a:hover{
      }
    
     .hero{
-        padding: 0 40px;
+        padding: 90px 20px 40px 20px;
+        margin-top: 0;
+        flex-direction: column;
+        gap: 32px;
     }
 
+    /* Cacher la photo de profil sur mobile */
     .hero > img{
-        width: 55%;
+        display: none;
     }
 
     .about > h2{
@@ -1230,3 +1306,186 @@ footer a:hover{
 
 
 
+  
+.fancy-word {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.07); }
+}
+
+.hero-title {
+    font-family: "Stack Sans Notch", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: #000000;
+}
+
+
+.name {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: rgb(0, 0, 0); 
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+
+.name:hover {
+    transform: translateY(-3px); 
+    color: rgb(40, 40, 40);      
+    cursor: pointer;
+}
+
+
+
+
+
+/* =======================
+   Section Skills
+======================= */
+.skills-section {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Texte */
+.skills-section p {
+    font-size: 1rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.skills-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* éviter tout débordement horizontal des sections principales */
+.hero,
+.about,
+.projects,
+.contact,
+.skills-section{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Item */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+/* Devicon */
+.skill-item i {
+    font-size: 70px;
+    color: #333;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+/* SVG externes */
+.skill-item img {
+    width: 70px;
+    height: 70px;
+    filter: grayscale(100%);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Texte */
+.skill-item span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-top: 8px;
+    transition: color 0.4s ease;
+}
+
+/* Hover : zoom + rotation */
+.skill-item:hover i,
+.skill-item:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Hover Devicon : couleur réelle */
+.skill-item:hover .devicon-python-plain { color: #3776AB; }
+.skill-item:hover .devicon-javascript-plain { color: #F7DF1E; }
+.skill-item:hover .devicon-html5-plain { color: #E44D26; }
+.skill-item:hover .devicon-css3-plain { color: #1572B6; }
+.skill-item:hover .devicon-keras-plain { color: #D00000; }
+.skill-item:hover .devicon-scikitlearn-plain { color: #F7931E; }
+.skill-item:hover .devicon-pandas-plain { color: #150458; }
+.skill-item:hover .devicon-numpy-plain { color: #013243; }
+.skill-item:hover .devicon-postgresql-plain { color: #336791; }
+.skill-item:hover .devicon-mongodb-plain { color: #47A248; }
+.skill-item:hover .devicon-mysql-plain { color: #4479A1; }
+.skill-item:hover .devicon-git-plain { color: #F05032; }
+.skill-item:hover .devicon-docker-plain { color: #2496ED; }
+.skill-item:hover .devicon-linux-plain { color: #000000; }
+.skill-item:hover .devicon-amazonwebservices-plain { color: #FF9900; }
+
+/* Hover texte */
+.skill-item:hover span {
+    color: #000;
+}
+
+/* Hover SVG externes : couleurs réelles */
+.skill-item:hover img {
+    filter: none;
+}
+
+.skill-item.bonus:hover {
+    transform: scale(1.2) rotate(3deg);
+    border-color: #000;
+}
+
+.skill-item.bonus {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #555;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-section h2 { font-size: 1.8rem; }
+    .skills-grid { gap: 30px; }
+    .skill-item i,
+    .skill-item img { font-size: 60px; width: 60px; height: 60px; }
+}

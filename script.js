@@ -1,5 +1,24 @@
 document.body.style.overflowX = 'hidden';
 
+// Menu hamburger mobile
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  if (mobileMenuToggle && navLinks) {
+    mobileMenuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    const navLinksItems = navLinks.querySelectorAll('a');
+    navLinksItems.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+      });
+    });
+  }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   const openModalBtn = document.getElementById('openModalBtn');
