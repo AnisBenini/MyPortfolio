@@ -722,19 +722,59 @@ nav button i{
     display: flex;
     flex-direction: column;
 }
-nav {
-    background-color: #5d585800;
-}
-nav .logo1 a{
-    color: #ffffff;
-    font-weight: 600;
-}
-nav .logo1 a:hover{
-    color: #606060;
+
+/* ============================================
+   Navigation spécifique pour la page Contact
+   ============================================ */
+
+.contact-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    border: 1px solid rgba(232, 232, 232, 0.3);
+    position: absolute;
+    top: 16px;
+    left: 5%;
+    transform: translateX(-50%);
+    border-radius: 16px;
+    padding: 12px 24px;
+    width: auto;
+    min-width: 120px;
+    max-width: calc(100% - 32px);
+    box-sizing: border-box;
+    background-color: rgba(93, 88, 88, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    overflow: hidden;
+    /* Empêcher tout débordement */
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
-.cont .nav-links a:hover{
-    color :white
+.contact-nav .contact-logo {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    flex: 0 1 auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.contact-nav .contact-logo a {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.contact-nav .contact-logo a:hover {
+    color: #606060;
 }
 
 .contacts h2{
@@ -1070,38 +1110,70 @@ footer a:hover{
         height: 250px;
     }
 
+    /* Contact page responsive - Tablet */
+    .cont .contacts h2 {
+        font-size: 32px;
+        margin-top: 7rem;
+        margin-bottom: 2.5rem;
+        padding: 0 20px;
+    }
+
     .contacts form {
         flex-direction: column;
-        width: 70%;
-        
-        transform: translateX(-25%);
+        width: 85%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        transform: none;
     }
+
+    .cont .contacts form .input-box {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .cont .contacts form .input-group-2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        gap: 1rem;
+    }
+
+    .cont .contacts form .input-box input,
+    .cont .contacts form textarea {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 0.9rem;
+        margin: 0;
+    }
+
+    .cont .contacts form .input-group-2 textarea {
+        width: 100%;
+        margin: 0;
+    }
+
+    .cont .contacts form .input-group-2 input.btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 12px 20px;
+        margin: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
     .contact .items .item button{
         width: 100%;
     }
     .contact .items .item #viewWorkBtn{
         width:auto
     }
-    .cont .contacts form .input-box input{
-        width: auto;
-        
-    }
-    .cont .contacts form .input-box,.cont .contacts form .input-group-2 {
-        flex-direction: column;
-        display: flex;
-        justify-content: center;
-        width:auto;
-        margin:0 10px;
-     }
-    .cont .contacts form .input-group-2 input {
-       
-        font-size: 12px;
-        width:50%;
-        margin-left: 60px;
-        margin-top: -10px;
-     }
-
-
 }
 
 @media screen and (max-width: 768px) {
@@ -1119,7 +1191,7 @@ footer a:hover{
     }
    
 
-    nav{
+    nav:not(.contact-nav){
         margin-bottom: 10px;
         padding: 10px 16px;
         position: fixed;
@@ -1185,48 +1257,131 @@ footer a:hover{
         display: none;
     }   
    
-    .contacts form {
-        display: flex;
-        flex-direction: column; /* champs empilés verticalement */
-        width: 90%;             /* occupe 90% de l'écran */
-        max-width: 500px;       /* limite la largeur sur grands écrans */
-        margin: 0 auto;         /* centre le formulaire */
-        gap: 15px;              /* espace entre les champs */
-        transform: none;        /* supprime le translateX problématique */
+    /* Contact page responsive - Mobile */
+    .cont {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+        padding-bottom: 2rem;
     }
 
-    /* Titre */
+    .cont .contacts {
+        padding: 0 15px;
+        min-height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
     .cont .contacts h2 {
-        font-size: 22px;
+        font-size: 24px;
         text-align: center;
-        margin-bottom: 20px;
+        margin-top: 6rem;
+        margin-bottom: 2rem;
+        padding: 0 15px;
+        line-height: 1.3;
+        letter-spacing: 0.05rem;
+    }
+
+    .contacts form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+        transform: none;
+        background: rgba(31, 31, 31, 0.95);
+        backdrop-filter: blur(10px);
     }
 
     /* Groupes de champs */
     .cont .contacts form .input-box,
     .cont .contacts form .input-group-2 {
         display: flex;
-        flex-direction: column; /* champs empilés sur mobile */
+        flex-direction: column;
         width: 100%;
-        margin: 0;              /* supprime marges fixes */
-        gap: 10px;
+        margin: 0;
+        padding: 0;
+        gap: 0.8rem;
     }
 
     /* Champs input */
     .cont .contacts form .input-box input,
-    .cont .contacts form .input-group-2 input {
-        width: 100%;             /* champs remplissent la largeur du parent */
-        font-size: 14px;         /* lisible sur mobile */
-        padding: 10px 12px;
-        border-radius: 15px;
-        border: 1px solid #ccc;
+    .cont .contacts form textarea {
+        width: 100%;
+        font-size: 15px;
+        padding: 0.85rem 1rem;
+        border-radius: 1.2rem;
+        border: 2px solid #606060;
         box-sizing: border-box;
+        margin: 0;
+        -webkit-appearance: none;
+        appearance: none;
     }
 
-    /* Optionnel : ajustement du deuxième groupe de champs */
-    .cont .contacts form .input-group-2 input {
-        margin-left: 0;          /* supprime margin-left fixe */
+    .cont .contacts form textarea {
+        min-height: 120px;
+        resize: vertical;
+        font-family: inherit;
+    }
+
+    /* Bouton submit */
+    .cont .contacts form .input-group-2 input.btn {
+        width: 100%;
+        font-size: 15px;
+        padding: 0.9rem 1.5rem;
+        margin: 0;
+        margin-left: 0;
         margin-top: 0;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .cont .contacts form .input-group-2 input.btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 4px 12px 4px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Navigation sur mobile pour la page contact */
+    .contact-nav {
+        width: calc(100% - 32px) !important;
+        max-width: calc(100% - 32px) !important;
+        padding: 8px 10px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        min-width: 0 !important;
+        gap: 0 !important;
+        justify-content: flex-start !important;
+        position: fixed !important;
+        top: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .contact-nav .contact-logo {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        max-width: calc(100% - 0px) !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-nav .contact-logo a {
+        font-size: 15px !important;
+        white-space: nowrap !important;
+        display: block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
 
@@ -1324,10 +1479,81 @@ footer a:hover{
     footer p{
         font-size: 11px;
     }
+}
 
+/* Très petits écrans (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    /* Contact page - Très petits écrans */
+    .cont .contacts h2 {
+        font-size: 20px;
+        margin-top: 5.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0 10px;
+    }
 
-    
+    .contacts form {
+        padding: 1.2rem 0.8rem;
+        gap: 0.8rem;
+        border-radius: 20px;
+    }
 
+    .cont .contacts form .input-box,
+    .cont .contacts form .input-group-2 {
+        gap: 0.7rem;
+    }
+
+    .cont .contacts form .input-box input,
+    .cont .contacts form textarea {
+        font-size: 14px;
+        padding: 0.75rem 0.9rem;
+        border-radius: 1rem;
+    }
+
+    .cont .contacts form textarea {
+        min-height: 100px;
+    }
+
+    .cont .contacts form .input-group-2 input.btn {
+        font-size: 14px;
+        padding: 0.8rem 1.2rem;
+    }
+
+    /* Navigation sur très petits écrans */
+    .contact-nav {
+        padding: 6px 8px !important;
+        top: 8px !important;
+        width: calc(100% - 24px) !important;
+        max-width: calc(100% - 24px) !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        gap: 0 !important;
+        justify-content: flex-start !important;
+        position: fixed !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .contact-nav .contact-logo {
+        max-width: 100% !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-nav .contact-logo a {
+        font-size: 13px !important;
+        white-space: nowrap !important;
+        display: block !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 }
 
 
