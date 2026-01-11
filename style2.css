@@ -1,5 +1,6 @@
 body{
   background-image: url(assets/bg.png);
+  zoom: 90%
 }
 nav {
   left:6%
@@ -195,4 +196,107 @@ nav .logo a{
 .modal-buttons .btn:hover {
   background-color: #dedede;
   color:#1f1f1f;
+}
+
+
+
+
+.portfolio-info {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.2)
+  );
+
+  backdrop-filter: blur(4px);
+  color: #dedede;
+  padding: 1rem;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+
+
+
+
+
+
+/* ======================
+   ADVANCED ANIMATED BG
+====================== */
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05), transparent 40%),
+    linear-gradient(120deg, #0f0f0f, #1a1a1a, #0f0f0f);
+  background-size: 200% 200%;
+  animation: gradientMove 20s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Futuristic grid overlay */
+.bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 40s linear infinite;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+
+/* Floating glow */
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.06), transparent 60%);
+  animation: glowFloat 25s linear infinite;
+}
+
+@keyframes glowFloat {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(10%, 10%); }
+  100% { transform: translate(0,0); }
+}
+
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120vh);
+  }
 }

@@ -74,7 +74,80 @@
           <a href="projects/3D/index.html" target="_blank" class="portfolio-demo-link" style="display:none;"></a>
         </div>
       </div>
+
+
+
+
+
+
+
       
+      <div class="portfolio-item" data-portfolio-item>
+        <img src="assets/TruthScope.jpg" class="portfolio-img">
+      
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">TruthScope</h3>
+      
+          <div class="portfolio-tags">
+            <span>Python </span>| <span>NLP</span> | <span>Deep Learning</span> | <span>BERT</span>
+          </div>
+      
+          <h4 class="portfolio-description">
+            Fake news detection platform using fine-tuned BERT (LoRA/QLoRA) for robust NLP inference.
+          </h4>
+      
+          <a href="https://github.com/AnisBenini/TruthScope." class="portfolio-source" style="display:none;"></a>
+          
+        </div>
+      </div>
+      
+
+      <div class="portfolio-item" data-portfolio-item>
+        <img src="assets/handwritten.jpg" class="portfolio-img">
+      
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">Handwritten Text Processing</h3>
+      
+          <div class="portfolio-tags">
+            <span>Python </span>|<span> OpenCV </span>|<span> Computer Vision</span>
+          </div>
+      
+          <h4 class="portfolio-description">
+            Segment handwritten text characters from scanned images with preprocessing and region-growing.
+          </h4>
+      
+          <a href="https://github.com/AnisBenini/Handwritten-Text-Processing-And-Segmentation" class="portfolio-source" style="display:none;"></a>
+          
+        </div>
+      </div>
+
+      
+      <div class="portfolio-item" data-portfolio-item>
+        <img src="assets/QA.jpg" class="portfolio-img">
+      
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">FineTuning QA Dataset</h3>
+      
+          <div class="portfolio-tags">
+            <span>Python</span> | <span>NLP</span> | <span>Machine Learning</span> | <span>LLaMa 3.2 1B</span> | <span>GPT-2 Large</span>
+          </div>
+      
+          <h4 class="portfolio-description">
+            Fine-tuning a QA dataset to enhance contextual understanding with advanced NLP preprocessing.
+          </h4>
+      
+          <a href="https://github.com/AnisBenini/FineTuning-QA_Dataset" class="portfolio-source" style="display:none;"></a>
+          
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
     </div>
   </section>
   
@@ -101,4 +174,22 @@
 
   <script src="script.js"></script>
 </body>
+
+<div class="bg"></div>
+<script>
+  const bg = document.querySelector('.bg');
+
+  for (let i = 0; i < 40; i++) {
+    const particle = document.createElement('span');
+    particle.className = 'particle';
+
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+    particle.style.animationDuration = 15 + Math.random() * 20 + 's';
+    particle.style.opacity = Math.random() * 0.5;
+
+    bg.appendChild(particle);
+  }
+</script>
+
 </html>
