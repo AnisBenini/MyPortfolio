@@ -308,7 +308,7 @@
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Fond noir simple
+      
       ctx.fillStyle = '#050505';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -320,13 +320,13 @@
         if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
         if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
 
-        // Points blancs
+        
         ctx.beginPath();
         ctx.arc(n.x, n.y, 1.2, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
         ctx.fill();
 
-        // Connexions entre points
+        
         for (let j = i + 1; j < nodes.length; j++) {
           const m = nodes[j];
           const dx = n.x - m.x;
@@ -342,7 +342,7 @@
           }
         }
 
-        // Connexions à la souris
+        
         if (mouse.x && mouse.y) {
           const dx = n.x - mouse.x;
           const dy = n.y - mouse.y;
@@ -363,14 +363,14 @@
 
     animate();
     
-    // Fonctionnalité de filtrage
+    
     document.addEventListener('DOMContentLoaded', function() {
       const filterButtons = document.querySelectorAll('.filter-btn');
       const portfolioItems = document.querySelectorAll('.portfolio-item');
       const countNumber = document.querySelector('.count-number');
       const filterCounts = document.querySelectorAll('.filter-count');
       
-      // Compter les projets par catégorie
+      
       const categoryCounts = {
         all: portfolioItems.length,
         ai: document.querySelectorAll('[data-category="ai"]').length,
@@ -378,7 +378,7 @@
         fullstack: document.querySelectorAll('[data-category="fullstack"]').length
       };
       
-      // Mettre à jour les compteurs des filtres
+      
       filterButtons.forEach(btn => {
         const filter = btn.getAttribute('data-filter');
         const countSpan = btn.querySelector('.filter-count');
@@ -388,10 +388,10 @@
       });
       
       function updateProjectNumbers() {
-        // Obtenir tous les projets visibles
+        
         const visibleProjects = document.querySelectorAll('.portfolio-item[style*="display: block"], .portfolio-item:not([style*="display: none"])');
         
-        // Mettre à jour les numéros pour les projets visibles
+        
         visibleProjects.forEach((item, index) => {
           const orderElement = item.querySelector('.project-order');
           if (orderElement) {
@@ -402,16 +402,14 @@
       
       filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-          // Retirer la classe active de tous les boutons
+          
           filterButtons.forEach(btn => btn.classList.remove('active'));
           
-          // Ajouter la classe active au bouton cliqué
           this.classList.add('active');
           
           const filterValue = this.getAttribute('data-filter');
           let visibleCount = 0;
           
-          // Filtrer les projets
           portfolioItems.forEach(item => {
             const category = item.getAttribute('data-category');
             
@@ -431,18 +429,16 @@
             }
           });
           
-          // Mettre à jour les numéros de projet
+          
           setTimeout(updateProjectNumbers, 350);
           
-          // Mettre à jour l'affichage du compteur
+          
           countNumber.textContent = visibleCount;
         });
       });
       
-      // Initialiser l'affichage du compteur
       countNumber.textContent = portfolioItems.length;
       
-      // Initialiser les numéros de projet
       updateProjectNumbers();
     });
   </script>

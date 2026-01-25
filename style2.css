@@ -1,8 +1,3 @@
-/* ======================
-   STYLE2.CSS - Version complète avec effets restaurés
-====================== */
-
-/* Variables CSS - Tous les effets restaurés */
 :root {
   --primary: #0af;
   --primary-glow: rgba(0, 170, 255, 0.3);
@@ -21,7 +16,6 @@
   --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Reset et styles de base */
 * {
   margin: 0;
   padding: 0;
@@ -38,12 +32,10 @@ html, body {
   line-height: 1.6;
 }
 
-/* ZOOM à 90% */
 html {
   zoom: 90%;
 }
 
-/* NEURAL BACKGROUND CANVAS */
 #neural-bg {
   position: fixed;
   top: 0;
@@ -56,9 +48,6 @@ html {
   background: radial-gradient(circle at center, var(--darker) 0%, var(--dark) 100%);
 }
 
-/* ======================
-   HEADER - Avec effets restaurés
-====================== */
 .main-header {
   padding: 2.5rem 6% 3rem;
   background: rgba(5, 5, 10, 0.85);
@@ -147,9 +136,6 @@ html {
   font-weight: 300;
 }
 
-/* ======================
-   PORTFOLIO FILTERS - Avec effets restaurés
-====================== */
 .portfolio-filters {
   display: flex;
   justify-content: center;
@@ -227,9 +213,6 @@ html {
   background: rgba(0, 170, 255, 0.2);
 }
 
-/* ======================
-   PORTFOLIO GRID
-====================== */
 .portfolio {
   padding: 0 6% 4rem;
   max-width: 1400px;
@@ -244,9 +227,6 @@ html {
   margin-bottom: 4rem;
 }
 
-/* ======================
-   PORTFOLIO ITEMS - Tous les effets restaurés
-====================== */
 .portfolio-item {
   position: relative;
   overflow: hidden;
@@ -316,7 +296,6 @@ html {
   background: rgba(0, 170, 255, 0.3);
 }
 
-/* AI Projects special styling */
 .portfolio-item[data-category="ai"] .project-category-badge {
   background: rgba(0, 255, 157, 0.2);
   border-color: rgba(0, 255, 157, 0.3);
@@ -349,9 +328,6 @@ html {
   opacity: 0.9;
 }
 
-/* ======================
-   PORTFOLIO INFO
-====================== */
 .portfolio-info {
   padding: 1.8rem;
   position: relative;
@@ -447,9 +423,6 @@ html {
   box-shadow: 0 5px 15px rgba(157, 0, 255, 0.2);
 }
 
-/* ======================
-   PORTFOLIO FOOTER
-====================== */
 .portfolio-footer {
   text-align: center;
   padding: 3rem 0;
@@ -498,9 +471,6 @@ html {
   font-weight: 300;
 }
 
-/* ======================
-   BOUTON GET IN TOUCH SIMPLE MAIS ÉLÉGANT
-====================== */
 .cta-button {
   display: inline-block;
   padding: 0.9rem 2.2rem;
@@ -538,9 +508,6 @@ html {
   box-shadow: 0 8px 25px rgba(0, 170, 255, 0.3);
 }
 
-/* ======================
-   ANIMATIONS DES CARTES - Restaurées
-====================== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -565,9 +532,6 @@ html {
 .portfolio-item:nth-child(6) { animation-delay: 0.6s; }
 .portfolio-item:nth-child(7) { animation-delay: 0.7s; }
 
-/* ======================
-   RESPONSIVE DESIGN
-====================== */
 @media (max-width: 1200px) {
   .portfolio-container {
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
@@ -678,9 +642,6 @@ html {
   }
 }
 
-/* ======================
-   EFFETS SPÉCIAUX POUR AI PROJECTS
-====================== */
 .portfolio-item[data-category="ai"] {
   border-color: rgba(0, 255, 157, 0.2);
 }
@@ -695,9 +656,6 @@ html {
   box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
 }
 
-/* ======================
-   EFFET GLOW SUR LES CARTES AU HOVER - Restauré
-====================== */
 .portfolio-item::after {
   content: '';
   position: absolute;
@@ -714,9 +672,6 @@ html {
   opacity: 1;
 }
 
-/* ======================
-   SCROLLBAR PERSONNALISÉE
-====================== */
 ::-webkit-scrollbar {
   width: 10px;
 }
