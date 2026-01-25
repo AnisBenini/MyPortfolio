@@ -4,192 +4,448 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Projects | BENINI.</title>
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style2.css">
-  <link rel="icon" class="logo" href="assets/logo.png" type="image/x-icon"/>
+  <link rel="icon" href="assets/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset et styles de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    body {
+      background: #050505;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    
+    /* Correction du background */
+    #neural-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -10;
+      pointer-events: none;
+    }
+    
+    /* ZOOM à 90% */
+    html {
+      zoom: 90%;
+    }
+  </style>
 </head>
+
 <body>
-  <nav>
-    <div class="logo">
-      <a href="index.html">BENINI.</a>
+
+  <!-- NEURAL BACKGROUND -->
+  <canvas id="neural-bg"></canvas>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-content">
+      <div class="header-nav">
+        <a href="index.html" class="header-logo">BENINI.</a>
+        <div class="header-subtitle">AI Engineer & Developer</div>
+      </div>
+      <div class="header-main">
+        <h1 class="page-title">My Projects</h1>
+        <p class="page-subtitle">A collection of my work in AI, web development, and full-stack solutions</p>
+      </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- Portfolio Section -->
+  <!-- PORTFOLIO -->
   <section class="portfolio" id="portfolio">
-    <h2 class="section-title">My Projects</h2>
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">
+        <span class="filter-count">7</span> All
+      </button>
+      <button class="filter-btn" data-filter="ai">
+        <span class="filter-count">3</span> AI/ML
+      </button>
+      <button class="filter-btn" data-filter="web">
+        <span class="filter-count">3</span> Web Dev
+      </button>
+      <button class="filter-btn" data-filter="fullstack">
+        <span class="filter-count">1</span> Full Stack
+      </button>
+    </div>
+
     <div class="portfolio-container">
-      <div class="portfolio-item" data-portfolio-item>
-        <img src="assets/404.jpg" alt="Project 1" class="portfolio-img">
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">ERROR-404</h3>
-          <h4 class="portfolio-description">An elegantly crafted 404 error page using HTML, CSS, and JavaScript, ensuring that lost visitors can easily find their way back to the main site. The design features smooth animations and interactive elements that provide a user-friendly experience while maintaining a professional appearance.</h4>
-          <a href="https://anisbenini.github.io/404-Page/" target="_blank" class="portfolio-demo-link" style="display:none;"></a>
-          <a href="https://github.com/AnisBenini/404-Page" class="portfolio-source" style="display:none;"></a>
+
+      <!-- AI PROJECT 1 -->
+      <div class="portfolio-item" data-portfolio-item data-category="ai">
+        <div class="project-order">1</div>
+        <div class="project-category-badge">AI</div>
+        <div class="portfolio-img-container">
+          <img src="assets/TruthScope.jpg" class="portfolio-img" alt="TruthScope AI Project">
+          <div class="portfolio-img-overlay"></div>
         </div>
-      </div>
-      <div class="portfolio-item" data-portfolio-item >
-        <img src="assets/Dashboard.JPG" alt="Project 2" class="portfolio-img">
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">DashBoard</h3>
-          <h4 class="portfolio-description">A sophisticated and fully responsive dashboard created with HTML, CSS, JavaScript, and Bootstrap. This project includes interactive charts, user analytics, and customizable widgets, providing a seamless experience for managing and visualizing data. It features a modern interface with intuitive navigation, making data management both efficient and visually appealing</h4>
-          <a href="https://anisbenini.github.io/DashBoard/dashboard.html" class="portfolio-demo-link" style="display:none;"></a>
-          <a href="https://github.com/AnisBenini/DashBoard" target="_blank" class="portfolio-source" style="display:none;"></a>
-
-        </div>
-      </div>
-      <div class="portfolio-item" data-portfolio-item>
-        <img src="assets/Myticket.jpg" alt="Project 3" class="portfolio-img">
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">MyTicket</h3>
-          <h4 class="portfolio-description">An advanced ticketing system developed using HTML, CSS, JavaScript, PHP, and MySQL. This project enables users to create, manage, and track support tickets with ease. It includes user authentication, ticket categorization, and real-time updates, offering a robust solution for customer support and issue tracking. The design is user-centric, ensuring that both users and administrators can navigate and operate the system effortlessly.</h4>
-          <a href="https://github.com/AnisBenini/MyTicket" target="_blank" class="portfolio-source" style="display:none;"></a>
-
-        </div>
-      </div>
-      <div class="portfolio-item" data-portfolio-item>
-        <img src="assets/1.JPG" alt="Project 4" class="portfolio-img">
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">SignIn | Signup page</h3>
-          <h4 class="portfolio-description">A sleek and intuitive SignIn and signup page built with HTML, CSS, and JavaScript. This project features smooth transitions between login and registration forms, enhancing user experience. The form validation is handled by JavaScript, ensuring that user inputs are correct before submission. The design prioritizes ease of use and accessibility, providing a seamless entry point for users.</h4>
-          <a href="https://anisbenini.github.io/Login-SignUp-Page/" class="portfolio-demo-link" style="display:none;"></a>
-          <a href="https://github.com/AnisBenini/Login-SignUp-Page" target="_blank" class="portfolio-source" style="display:none;"></a>
-
-        </div>
-      </div>
-      <div class="portfolio-item" data-portfolio-item>
-        <img src="projects/CNN/assets/neural.jpg" alt="Project 4" class="portfolio-img">
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">Neural Networks</h3>
-          <h4 class="portfolio-description">An innovative neural network model developed for an academic project, which received a commendable grade of 17/20. This project showcases the application of cutting-edge machine learning techniques to classify and predict complex data patterns. The model is designed to be robust and efficient, highlighting a deep understanding of artificial intelligence and its practical implementations. This project not only demonstrates technical expertise but also a commitment to academic excellence.</h4>
-          <a href="https://github.com/AnisBenini/Smart-Home-Activity-Recognition" target="_blank" class="portfolio-source" style="display:none;"></a>
-
-        </div>
-      </div>
-      <div class="portfolio-item" data-portfolio-item>
-        <img src="projects/3D/assets/1.jpg" alt="Project 4" class="portfolio-img">
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">3D Blender</h3>
-          <h4 class="portfolio-description">This 3D Blender artwork showcases a mesmerizing scene crafted with precision and creativity. Utilizing advanced techniques in Blender, the project features detailed modeling, realistic textures, and dynamic lighting. Each element, from the organic shapes to the intricate materials, is designed to create a captivating and immersive experience. The use of Blender's Cycles render engine ensures high-quality, photorealistic visuals, while post-processing enhances the overall atmosphere. This artwork demonstrates the powerful capabilities of Blender in bringing imaginative worlds to life with stunning realism and artistic flair.</h4>
-          <a href="projects/3D/index.html" target="_blank" class="portfolio-demo-link" style="display:none;"></a>
-        </div>
-      </div>
-
-
-
-
-
-
-
-      
-      <div class="portfolio-item" data-portfolio-item>
-        <img src="assets/TruthScope.jpg" class="portfolio-img">
-      
         <div class="portfolio-info">
           <h3 class="portfolio-title">TruthScope</h3>
-      
           <div class="portfolio-tags">
-            <span>Python </span>| <span>NLP</span> | <span>Deep Learning</span> | <span>BERT</span>
+            <span>Python</span><span>NLP</span><span>BERT</span><span>Deep Learning</span>
           </div>
-      
           <h4 class="portfolio-description">
-            Fake news detection platform using fine-tuned BERT (LoRA/QLoRA) for robust NLP inference.
+            Fake news detection using fine-tuned BERT (LoRA / QLoRA).
           </h4>
-      
-          <a href="https://github.com/AnisBenini/TruthScope." class="portfolio-source" style="display:none;"></a>
-          
+          <div class="portfolio-actions">
+            <a href="https://github.com/AnisBenini/TruthScope." class="portfolio-source" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
         </div>
       </div>
-      
 
-      <div class="portfolio-item" data-portfolio-item>
-        <img src="assets/handwritten.jpg" class="portfolio-img">
-      
+      <!-- AI PROJECT 2 -->
+      <div class="portfolio-item" data-portfolio-item data-category="ai">
+        <div class="project-order">2</div>
+        <div class="project-category-badge">AI</div>
+        <div class="portfolio-img-container">
+          <img src="assets/handwritten.jpg" class="portfolio-img" alt="Handwritten Text Processing">
+          <div class="portfolio-img-overlay"></div>
+        </div>
         <div class="portfolio-info">
           <h3 class="portfolio-title">Handwritten Text Processing</h3>
-      
           <div class="portfolio-tags">
-            <span>Python </span>|<span> OpenCV </span>|<span> Computer Vision</span>
+            <span>Python</span><span>OpenCV</span><span>Computer Vision</span>
           </div>
-      
           <h4 class="portfolio-description">
-            Segment handwritten text characters from scanned images with preprocessing and region-growing.
+            Handwritten text segmentation and preprocessing pipeline.
           </h4>
-      
-          <a href="https://github.com/AnisBenini/Handwritten-Text-Processing-And-Segmentation" class="portfolio-source" style="display:none;"></a>
-          
+          <div class="portfolio-actions">
+            <a href="https://github.com/AnisBenini/Handwritten-Text-Processing-And-Segmentation" class="portfolio-source" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
         </div>
       </div>
 
-      
-      <div class="portfolio-item" data-portfolio-item>
-        <img src="assets/QA.jpg" class="portfolio-img">
-      
+      <!-- AI PROJECT 3 -->
+      <div class="portfolio-item" data-portfolio-item data-category="ai">
+        <div class="project-order">3</div>
+        <div class="project-category-badge">AI</div>
+        <div class="portfolio-img-container">
+          <img src="assets/QA.jpg" class="portfolio-img" alt="Fine-Tuning QA Dataset">
+          <div class="portfolio-img-overlay"></div>
+        </div>
         <div class="portfolio-info">
-          <h3 class="portfolio-title">FineTuning QA Dataset</h3>
-      
+          <h3 class="portfolio-title">Fine-Tuning QA Dataset</h3>
           <div class="portfolio-tags">
-            <span>Python</span> | <span>NLP</span> | <span>Machine Learning</span> | <span>LLaMa 3.2 1B</span> | <span>GPT-2 Large</span>
+            <span>Python</span><span>NLP</span><span>LLaMA 3.2</span><span>GPT-2</span>
           </div>
-      
           <h4 class="portfolio-description">
-            Fine-tuning a QA dataset to enhance contextual understanding with advanced NLP preprocessing.
+            Fine-tuning QA datasets for improved contextual understanding.
           </h4>
-      
-          <a href="https://github.com/AnisBenini/FineTuning-QA_Dataset" class="portfolio-source" style="display:none;"></a>
-          
+          <div class="portfolio-actions">
+            <a href="https://github.com/AnisBenini/FineTuning-QA_Dataset" class="portfolio-source" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
         </div>
       </div>
-      
 
+      <!-- WEB PROJECT 1 -->
+      <div class="portfolio-item" data-portfolio-item data-category="web">
+        <div class="project-order">4</div>
+        <div class="project-category-badge">Web</div>
+        <div class="portfolio-img-container">
+          <img src="assets/404.jpg" class="portfolio-img" alt="ERROR 404 Project">
+          <div class="portfolio-img-overlay"></div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">ERROR 404</h3>
+          <div class="portfolio-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <h4 class="portfolio-description">
+            Elegant animated 404 page with smooth transitions and clean UX.
+          </h4>
+          <div class="portfolio-actions">
+            <a href="https://github.com/AnisBenini/404-Page" class="portfolio-source" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://anisbenini.github.io/404-Page/" class="portfolio-demo-link" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
 
+      <!-- WEB PROJECT 2 -->
+      <div class="portfolio-item" data-portfolio-item data-category="web">
+        <div class="project-order">5</div>
+        <div class="project-category-badge">Web</div>
+        <div class="portfolio-img-container">
+          <img src="assets/Dashboard.JPG" class="portfolio-img" alt="Admin Dashboard">
+          <div class="portfolio-img-overlay"></div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">Admin Dashboard</h3>
+          <div class="portfolio-tags">
+            <span>HTML</span><span>CSS</span><span>JS</span><span>Bootstrap</span>
+          </div>
+          <h4 class="portfolio-description">
+            Responsive dashboard with analytics, charts and modern UI.
+          </h4>
+          <div class="portfolio-actions">
+            <a href="https://github.com/AnisBenini/DashBoard" class="portfolio-source" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://anisbenini.github.io/DashBoard/dashboard.html" class="portfolio-demo-link" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
 
+      <!-- WEB PROJECT 3 -->
+      <div class="portfolio-item" data-portfolio-item data-category="web">
+        <div class="project-order">6</div>
+        <div class="project-category-badge">Web</div>
+        <div class="portfolio-img-container">
+          <img src="assets/1.JPG" class="portfolio-img" alt="Auth UI Project">
+          <div class="portfolio-img-overlay"></div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">Auth UI</h3>
+          <div class="portfolio-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <h4 class="portfolio-description">
+            Smooth login & signup interface with form validation.
+          </h4>
+          <div class="portfolio-actions">
+            <a href="https://github.com/AnisBenini/Login-SignUp-Page" class="portfolio-source" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
 
+      <!-- FULL STACK PROJECT -->
+      <div class="portfolio-item" data-portfolio-item data-category="fullstack">
+        <div class="project-order">7</div>
+        <div class="project-category-badge">Full-Stack</div>
+        <div class="portfolio-img-container">
+          <img src="assets/Myticket.jpg" class="portfolio-img" alt="MyTicket Project">
+          <div class="portfolio-img-overlay"></div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">MyTicket</h3>
+          <div class="portfolio-tags">
+            <span>HTML</span><span>CSS</span><span>JS</span><span>PHP</span><span>MySQL</span>
+          </div>
+          <h4 class="portfolio-description">
+            Full ticket management system with authentication and admin panel.
+          </h4>
+          <div class="portfolio-actions">
+            <a href="https://github.com/AnisBenini/MyTicket" class="portfolio-source" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
 
-
-
+    </div>
+    
+    <div class="portfolio-footer">
+      <div class="project-count">
+        Displaying <span class="count-number">7</span> of <span class="count-total">7</span> projects
+      </div>
+      <div class="cta-section">
+        <p class="cta-text">Interested in collaboration or AI projects?</p>
+        <a href="contact.html" class="cta-button">Get In Touch</a>
+      </div>
     </div>
   </section>
-  
 
-  <!-- Modal -->
-  <div class="modal" data-modal>
-    <div class="modal-content">
-      <span class="close-btn" data-modal-close>&times;</span>
-      <div class="modal-body">
-        <div class="modal-details">
-          <h3 class="modal-title" data-modal-title>Project Title</h3>
-          <p class="modal-description" data-modal-description>Project Description</p>
-          <div class="modal-buttons">
-            <a href="#" class="btn" data-modal-source>Source Code</a>
-            <a href="#" class="btn" data-modal-demo>Live Demo</a>
-          </div>
-        </div>
-        <div class="modal-img-container">
-          <img src="project1.jpg" alt="Project Image" class="modal-img" data-modal-img>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- NEURAL BACKGROUND SCRIPT -->
+  <script>
+    const canvas = document.getElementById("neural-bg");
+    const ctx = canvas.getContext("2d");
 
-  <script src="script.js"></script>
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    
+    resize();
+    window.addEventListener("resize", resize);
+
+    const mouse = { x: null, y: null };
+    window.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    
+    window.addEventListener("mouseleave", () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    const COUNT = window.innerWidth < 768 ? 45 : 90;
+    const nodes = Array.from({ length: COUNT }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Fond noir simple
+      ctx.fillStyle = '#050505';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
+
+        if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+        if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+
+        // Points blancs
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, 1.2, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+        ctx.fill();
+
+        // Connexions entre points
+        for (let j = i + 1; j < nodes.length; j++) {
+          const m = nodes[j];
+          const dx = n.x - m.x;
+          const dy = n.y - m.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 130) {
+            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 130})`;
+            ctx.lineWidth = 0.4;
+            ctx.beginPath();
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(m.x, m.y);
+            ctx.stroke();
+          }
+        }
+
+        // Connexions à la souris
+        if (mouse.x && mouse.y) {
+          const dx = n.x - mouse.x;
+          const dy = n.y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 160) {
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
+            ctx.lineWidth = 0.6;
+            ctx.beginPath();
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+    
+    // Fonctionnalité de filtrage
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+      const countNumber = document.querySelector('.count-number');
+      const filterCounts = document.querySelectorAll('.filter-count');
+      
+      // Compter les projets par catégorie
+      const categoryCounts = {
+        all: portfolioItems.length,
+        ai: document.querySelectorAll('[data-category="ai"]').length,
+        web: document.querySelectorAll('[data-category="web"]').length,
+        fullstack: document.querySelectorAll('[data-category="fullstack"]').length
+      };
+      
+      // Mettre à jour les compteurs des filtres
+      filterButtons.forEach(btn => {
+        const filter = btn.getAttribute('data-filter');
+        const countSpan = btn.querySelector('.filter-count');
+        if (countSpan) {
+          countSpan.textContent = categoryCounts[filter];
+        }
+      });
+      
+      function updateProjectNumbers() {
+        // Obtenir tous les projets visibles
+        const visibleProjects = document.querySelectorAll('.portfolio-item[style*="display: block"], .portfolio-item:not([style*="display: none"])');
+        
+        // Mettre à jour les numéros pour les projets visibles
+        visibleProjects.forEach((item, index) => {
+          const orderElement = item.querySelector('.project-order');
+          if (orderElement) {
+            orderElement.textContent = index + 1;
+          }
+        });
+      }
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Retirer la classe active de tous les boutons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Ajouter la classe active au bouton cliqué
+          this.classList.add('active');
+          
+          const filterValue = this.getAttribute('data-filter');
+          let visibleCount = 0;
+          
+          // Filtrer les projets
+          portfolioItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            
+            if (filterValue === 'all' || category === filterValue) {
+              item.style.display = 'block';
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, 10);
+              visibleCount++;
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                item.style.display = 'none';
+              }, 300);
+            }
+          });
+          
+          // Mettre à jour les numéros de projet
+          setTimeout(updateProjectNumbers, 350);
+          
+          // Mettre à jour l'affichage du compteur
+          countNumber.textContent = visibleCount;
+        });
+      });
+      
+      // Initialiser l'affichage du compteur
+      countNumber.textContent = portfolioItems.length;
+      
+      // Initialiser les numéros de projet
+      updateProjectNumbers();
+    });
+  </script>
+
 </body>
-
-<div class="bg"></div>
-<script>
-  const bg = document.querySelector('.bg');
-
-  for (let i = 0; i < 40; i++) {
-    const particle = document.createElement('span');
-    particle.className = 'particle';
-
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDuration = 15 + Math.random() * 20 + 's';
-    particle.style.opacity = Math.random() * 0.5;
-
-    bg.appendChild(particle);
-  }
-</script>
-
 </html>
